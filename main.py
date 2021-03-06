@@ -7,7 +7,7 @@ from plotly import offline
 
 
 class Reddit:
-    def r_learn_python_graph(self, time, subreddit='learnpython'):  # default subreddit is learnpython
+    def r_graph(self, time, subreddit='learnpython'):  # default subreddit is learnpython
 
         # requesting the information
 
@@ -108,4 +108,4 @@ class Reddit:
 
 
 c = Reddit()
-c.r_learn_python_graph(time='year', subreddit='learnpython')  # times are: now, today, month, year and all
+c.r_graph(time='year', subreddit='learnpython')  # times are: now, today, month, year and all
