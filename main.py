@@ -11,18 +11,12 @@ class Reddit:
 
         # requesting the information
 
+        # set up headers not difficult just looks, If my instuctions are bad here's a video I found explaining how to do It https://www.youtube.com/watch?v=Mw-dsY8UKVs&t=129s
+        
         headers = {
-            'authority': 'www.reddit.com',
-            'cache-control': 'max-age=0',
-            'upgrade-insecure-requests': '1',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'sec-fetch-site': 'none',
-            'sec-fetch-mode': 'navigate',
-            'sec-fetch-user': '?1',
-            'sec-fetch-dest': 'document',
-            'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
-            'cookie': 'csv=1; edgebucket=bRkItS6Vr3cKCZOUF4; __gads=ID=55c2de4f466a9104:T=1609350521:S=ALNI_MZYAXE1q8H2aW2gpqAR9ePrPn36jw; eu_cookie_v2=3; G_ENABLED_IDPS=google; pc=de; _rdt_uuid=1614720656004.86c45b48-7360-4c17-8acf-19f79c0dd73a; show_announcements=no; USER=eyJwcmVmcyI6eyJsYXlvdXQiOiJjYXJkIiwiZ2xvYmFsVGhlbWUiOiJSRURESVQifX0=; g_state=^{^\\^i_l^\\^:0,^\\^i_t^\\^:1615052854329^}; reddit_session=750220390183^%^2C2021-03-05T17^%^3A50^%^3A57^%^2C8f11e615f62fae7c45b4d5f175cc78fd013c5364; loid=00000000009kn9uluv.2.1609350518000.Z0FBQUFBQmdRbS1CblZKWC0tejgtZ0tMdnV0VjdiWG1ZTjJqc2liaGY0djR1Z1lnMWFQaTBVM3d5VUx2U09KeGg3LVRPUnpNSEhPWXhpY3o3QmN0ZWdmbUVSY3ZqMlQ3OFRRellrVnVhTEZmWjZfcVc4Y2UteVowUnl0cVF4N0RSM1RjNW9EbG5VWnE; token_v2=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTUwMzIwMjEsInN1YiI6Ijc1MDIyMDM5MDE4My10aWR0eXBNTzBOTG11cFdKYXZFWFFWSkgtY0kiLCJsb2dnZWRJbiI6dHJ1ZSwic2NvcGVzIjpbIioiLCJlbWFpbCJdfQ.QU91XOs-rim7vYOzUWSXP6_H8n80iG_lYhwf3i6uyVE; __aaxsc=2; aasd=9^%^7C1615028526940; session=0433194fe02afab6cab8bbdd07b9b7ffd27d80c3gASVSQAAAAAAAABKP2JDYEdB2BDYUBhdj32UjAdfY3NyZnRflIwoMjk5OWUxYjNjYWVhNzEzYjJlNzMwZDcxNjE5MWRlN2Y4ZTc4ODA0ZZRzh5Qu; session_tracker=fdqlgoepdnbpamelib.0.1615028880336.Z0FBQUFBQmdRMktRQ3A4RDNhclMteVNVakM1cXppWVJMNGcwX2YyN2JVcW5HaVd3c1JDS3ptYU0xajBwWXZ3OVd2YlNZVVJWMVJBMEhiUkRZeXBOWWdQY0J3cEtqZ0FubTFxNUlyUEx3bGwzTTJDcHoxOHA0U2pIODEwUm1yUDlwbTd1T1h6Z1pTV04',
+            # Step 1: go to https://www.reddit.com/.json  Step 2: press f12    Step 3: Click Network   Step 4: Refresh The Page  Step 5: Right Click .json then hover over copy and then copy as Curl cmd
+            # Step 6: go to https://curl.trillworks.com/ and paste link on the left box  # Step 7: copy everyting from right box and paste under hear then remove everything apart from the text under headers
+            
         }
 
         params = (
