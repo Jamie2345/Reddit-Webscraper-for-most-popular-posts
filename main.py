@@ -1,22 +1,18 @@
-import requests  # used to request data from reddit
+import requests
 # import json   (only needed to save the json to see how it is structured (not needed for the main part of the program)
 
 # Imports to create interactive graph
-
 from plotly import offline
 
 
 class Reddit:
     def r_graph(self, time, subreddit='learnpython'):  # default subreddit is learnpython
-
-        # requesting the information
-
+        
         # set up headers not difficult just looks, If my instuctions are bad here's a video I found explaining how to do It https://www.youtube.com/watch?v=Mw-dsY8UKVs&t=129s
         
         headers = {
             # Step 1: go to https://www.reddit.com/.json  Step 2: press f12    Step 3: Click Network   Step 4: Refresh The Page  Step 5: Right Click .json then hover over copy and then copy as Curl cmd
             # Step 6: go to https://curl.trillworks.com/ and paste link on the left box  # Step 7: copy everyting from right box and paste under hear then remove everything apart from the text under headers
-            
         }
 
         params = (
@@ -24,27 +20,12 @@ class Reddit:
         )
 
         response = requests.get(f'https://www.reddit.com/r/{subreddit}/top/.json', headers=headers, params=params)
-
+        
         response_dict = response.json()   # create a json file from the request
-
-        # Saving the json file to find the keys (''' out because it isn't part of the program just showing how I know all of the keys to information)
-
-        '''
-        readable_file = r'area you want to save it to\something.JSON'
-        with open(readable_file, 'w') as e:
-            json.dump(response_dict, e, indent=4)
-        # then you would just go into that file and open, it would look like this https://imgur.com/a/O54qNdF
-        '''
-
-        # getting all information about all posts from the json file
-
         posts = response_dict['data']['children']  # get all posts/children
 
         # lists of all info
-
         upvotes, hyperlinks_to_posts, hover_text = [], [], []
-
-        # for loop to get each individual posts information
 
         for post in posts[:20]:  # get first 20 posts
 
@@ -63,9 +44,6 @@ class Reddit:
             hyperlinks_to_posts.append(f"<a href='{post_link}'>{author}</a>")
 
         # Plotting the graph
-
-        # Setting the data in graph
-
         data = [{
             'type': 'bar',
             'x': hyperlinks_to_posts,
